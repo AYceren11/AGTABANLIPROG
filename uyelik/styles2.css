@@ -1,0 +1,101 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #2a1b18; /* Koyu kahverengi */
+    color: #2a1b18;
+    display: flex;
+    flex-direction: column;
+}
+
+.adim {
+    padding: 20px;
+}
+
+.title-container {
+    margin-left: 30px;
+}
+
+.title {
+    font-size: 2rem; 
+    color: #2a1b18;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #644A2D; 
+    border-radius: 120px;
+    background-color: #957860;
+    display: inline-block; 
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 50px;
+    border-bottom: 2px solid #957860; 
+}
+
+.navigation button {
+    background: #957860; /* Açık kahverengi */
+    color: #2a1b18;
+    border: none;
+    padding: 10px 60px;
+    border-radius: 120px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navigation button:hover {
+    background:#644A2D;
+    transform: scale(1.05);
+}
+
+.search-btn i {
+    color: #2a1b18;
+}
+
+/* Main Content */
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px; 
+}
+
+
+/* Life Section */
+.life-section {
+    text-align: center;
+}
+
+.section-title {
+    background-color: #957860;
+    padding: 20px;
+    border-radius: 150px;
+    max-width: 500px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.life-text {
+    background-color: #957860;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 1600px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #2a1b18;
+}

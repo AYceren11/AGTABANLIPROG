@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CERENS BLOG-Ara</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="adim">
+      <div class="title-container">
+        <h1 class="title">Ayşe Ceren Şenel</h1>
+      </div>
+      <nav class="navigation">
+        <button onclick="location.href='index.php'">Anasayfa</button>
+        <button onclick="location.href='önceki.html'">Önceki Yazılar</button>
+        <button onclick="location.href='hayatım.html'">Hayatım</button>
+        <button onclick="location.href='müzik.html'">Müzik</button>
+        <button onclick="location.href='ara.html'">Ara</button>
+      </nav>
+    </header>
+    <main class="content">
+      <section>
+        <!-- Arama Kutusu -->
+        <input type="text" id="searchBox" placeholder="ARA" />
+
+        <!-- Arama Sonuçları -->
+        <div id="results">
+          <a href="yazı1.html" class="post-link">
+            <div class="post" data-title="Başlık 1">
+              <img src="lindy.jpg" alt="Başlık 1 Görseli" />
+              <h3>Başlık 1</h3>
+              <p>
+                Bu yazının ilk üç cümlesi buraya gelir. Lorem ipsum dolor sit
+                amet...
+              </p>
+              <span>5.11.2024</span>
+            </div>
+          </a>
+          <a href="yazı2.html" class="post-link">
+            <div class="post" data-title="Başlık 2">
+              <img src="latin.jpg" alt="Başlık 2 Görseli" />
+              <h3>Başlık 2</h3>
+              <p>
+                Bu yazının ilk üç cümlesi buraya gelir. Lorem ipsum dolor sit
+                amet...
+              </p>
+              <span>4.11.2024</span>
+            </div>
+          </a>
+          <a href="yazı3.html" class="post-link">
+            <div class="post" data-title="Başlık 3">
+              <img src="books.jpg" alt="Başlık 3 Görseli" />
+              <h3>Başlık 3</h3>
+              <p>
+                Bu yazının ilk üç cümlesi buraya gelir. Lorem ipsum dolor sit
+                amet...
+              </p>
+              <span>3.11.2024</span>
+            </div>
+          </a>
+          <a href="yazı4.html" class="post-link">
+            <div class="post" data-title="Başlık 4">
+              <img src="ballroom.jpg" alt="Başlık 4 Görseli" />
+              <h3>Başlık 4</h3>
+              <p>
+                Bu yazının ilk üç cümlesi buraya gelir. Lorem ipsum dolor sit
+                amet...
+              </p>
+              <span>2.11.2024</span>
+            </div>
+          </a>
+          <a href="yazı5.html" class="post-link">
+            <div class="post" data-title="Başlık 5">
+              <img src="daktilo.jpg" alt="Başlık 5 Görseli" />
+              <h3>Başlık 5</h3>
+              <p>
+                Bu yazının ilk üç cümlesi buraya gelir. Lorem ipsum dolor sit
+                amet...
+              </p>
+              <span>1.11.2024</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <style>
+      /* Arama kutusu stili*/
+      #searchBox {
+        width: 100%;
+        padding: 10px 15px; 
+        background-color: #957860;
+        font-size: 16px;
+        color: #2a1b18;
+        border: 2px solid #2a1b18;
+        border-radius: 25px; 
+      }
+      #searchBox::placeholder {
+        color: #2a1b18;
+        font-weight: bold;
+        font-size: 20px;
+      }
+      #postContainer {
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 10px; 
+      }
+    </style>
+
+    <script>
+      // Arama kutusunu ve sonuçları seç
+      const searchBox = document.getElementById("searchBox");
+      const posts = document.querySelectorAll(".post");
+      searchBox.placeholder = "ARAMAK İÇİN TIKLA!";
+
+      // Arama kutusunda yazılanlara göre filtreleme yap
+      searchBox.addEventListener("input", function () {
+        const searchTerm = normalizeString(searchBox.value.trim());
+        posts.forEach((post) => {
+          const title = normalizeString(post.getAttribute("data-title")); 
+          if (title.indexOf(searchTerm) !== -1) {
+          
+            post.style.display = "block";
+          } else {
+            post.style.display = "none"; 
+          }
+        });
+      });
+
+      // ı-i harfleri düzgün şekilde aramak için fonksiyon
+      function normalizeString(str) {
+        return str
+          .toLowerCase() // Küçük harfe çevir
+          .replace(/ı/g, "i") // 'ı' harfini 'i'ye dönüştür
+          .replace(/İ/g, "i") // 'İ' harfini 'i'ye dönüştür
+          .replace(/\s+/g, ""); // Boşlukları kaldır
+      }
+    </script>
+  </body>
+</html>
